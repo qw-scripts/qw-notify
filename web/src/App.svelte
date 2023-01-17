@@ -1,18 +1,20 @@
-<script lang="ts">
-  import VisibilityProvider from './providers/VisibilityProvider.svelte';
-  import HelloWorld from './components/HelloWorld.svelte';
-  import { debugData } from './utils/debugData';
 
-  debugData([
-    {
-      action: 'setVisible',
-      data: true,
-    },
-  ]);
+<script>
+  import ToastProvider from "./providers/ToastProvider.svelte";
 </script>
 
-<main>
-  <VisibilityProvider>
-    <HelloWorld />
-  </VisibilityProvider>
+<main class="container">
+  <ToastProvider />
 </main>
+
+<style>
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+  }
+</style>

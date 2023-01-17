@@ -11,6 +11,9 @@ ui_page 'web/build/index.html'
 
 client_script "client/**/*"
 server_script "server/**/*"
+shared_scripts {
+  'shared/**/*',
+}
 
 files {
   'web/build/index.html',

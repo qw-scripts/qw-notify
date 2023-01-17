@@ -1,21 +1,52 @@
-RegisterCommand('svelte:show', function()
+RegisterCommand('test-notis', function()
     SendNUIMessage({
-        action = 'setVisible',
-        data = true
+        action = 'addToast',
+        data = {
+            message = 'This is a test notification',
+            type = 'primary',
+            timeout = 5000
+        }
     })
-    SetNuiFocus(true, true)
+    SendNUIMessage({
+        action = 'addToast',
+        data = {
+            message = 'This is a test notification',
+            type = 'info',
+            timeout = 5000
+        }
+    })
+    SendNUIMessage({
+        action = 'addToast',
+        data = {
+            message = 'This is a test notification',
+            type = 'success',
+            timeout = 5000
+        }
+    })
+    SendNUIMessage({
+        action = 'addToast',
+        data = {
+            message = 'This is a test notification',
+            type = 'error',
+            timeout = 5000
+        }
+    })
 end)
 
-RegisterNUICallback('getClientData', function(_, cb)
-    local playerCoords = GetEntityCoords(PlayerPedId())
-    cb({
-        x = math.ceil(playerCoords.x),
-        y = math.ceil(playerCoords.y),
-        z = math.ceil(playerCoords.z)
-    })
+RegisterNUICallback('qw-notify:GetColorConfig', function(_, cb)
+    local colors = Config.Colors
+    cb(colors)
 end)
 
-RegisterNUICallback('hideUI', function(_, cb)
-    cb({})
-    SetNuiFocus(false, false)
-end)
+function Notify(message, type, timeout)
+    SendNUIMessage({
+        action = 'addToast',
+        data = {
+            message = message,
+            type = type,
+            timeout = timeout
+        }
+    })
+end
+
+exports('Notify', Notify)

@@ -1,11 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import {
-    CheckCircle,
-    Info,
-    Star,
-    WarningCircle,
-  } from "phosphor-svelte";
+  import { CheckCircle, Info, Star, WarningCircle } from "phosphor-svelte";
   import { colors } from "../store/stores";
 
   export let type: "info" | "success" | "error" | "primary" = "info";
@@ -16,7 +11,16 @@
   });
 </script>
 
-<article class={type} style="background: {configColors[type].main}; border: 2px solid {configColors[type].border}" role="alert" transition:fade>
+<article
+  class={type}
+  style="background: {configColors[type].main}; border: 2px solid {configColors[
+    type
+  ].border}; color: {configColors[type].fontColor}; font-family: {configColors[
+    type
+  ].fontFamily};"
+  role="alert"
+  transition:fade
+>
   {#if type === "success"}
     <CheckCircle size={30} color="#ffffff" weight="fill" />
   {:else if type === "error"}

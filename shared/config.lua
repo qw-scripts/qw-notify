@@ -12,24 +12,28 @@ Config.Colors = { -- You can change these colors to whatever you want
         main = '#0284c7',
         border = '#0369a1',
         fontColor = '#ffffff',
+        iconColor = '#ffffff',
         fontFamily = 'Arial, sans-serif'
     },
     ['success'] =  {
         main = '#88b772',
         border = '#70965e',
         fontColor = '#ffffff',
+        iconColor = '#ffffff',
         fontFamily = 'Arial, sans-serif'
     },
     ['error'] =  {
         main = '#f05454',
         border = '#ca4949',
         fontColor = '#ffffff',
+        iconColor = '#ffffff',
         fontFamily = 'Arial, sans-serif'
     },
     ['primary'] =  {
         main = '#242424',
         border = '#1d1d1d',
         fontColor = '#ffffff',
+        iconColor = '#ffffff',
         fontFamily = 'Arial, sans-serif'
     },
 }

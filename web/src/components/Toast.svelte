@@ -22,13 +22,13 @@
   transition:fade
 >
   {#if type === "success"}
-    <CheckCircle size={30} color="#ffffff" weight="fill" />
+    <CheckCircle size={30} color={configColors[type].iconColor} weight="fill" />
   {:else if type === "error"}
-    <WarningCircle size={30} color="#ffffff" weight="fill" />
+    <WarningCircle size={30} color={configColors[type].iconColor} weight="fill" />
   {:else if type === "info"}
-    <Star size={30} color="#ffffff" weight="fill" />
+    <Star size={30} color={configColors[type].iconColor} weight="fill" />
   {:else if type === "primary"}
-    <Info size={30} color="#ffffff" weight="fill" />
+    <Info size={30} color={configColors[type].iconColor} weight="fill" />
   {/if}
 
   <div class="text font-medium">

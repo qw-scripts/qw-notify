@@ -47,9 +47,16 @@ with:
 
 ```lua
 function QBCore.Functions.Notify(text, texttype, length)
+    if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
         length = length or 5000
         texttype = texttype or 'primary'
+        exports['qw-notify']:Notify(ttext, texttype, length)
+    else
+        texttype = texttype or 'primary'
+        length = length or 5000
         exports['qw-notify']:Notify(text, texttype, length)
+    end
 end
 ```
 
